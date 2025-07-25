@@ -1,0 +1,21 @@
+ ## Check Divisibility by Digit Sum and Product
+
+class Solution {
+public:
+    bool checkDivisibility(int n) {
+        int cpyN = n;
+        int sum = 0;
+        int mult = 1;
+
+        while (cpyN >0){
+            int reminder = cpyN%10;
+            sum +=reminder;
+            mult *=reminder;
+            cpyN/=10;
+        }
+        
+        return n%(sum + mult)==0 ? true: false;
+    }
+};
+
+////////////////////////// end  
